@@ -1,25 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import index from "../views/index.vue";
-import page404 from "../views/404.vue";
+import { createRouterMaps } from "./helper.js";
+import index from "@/pages/index.vue";
+import page404 from "@/pages/404.vue";
 
-/**
- * 生成路由map
- * @param {object} paths 路由路径关系
- * @return {array} 路由表
- */
-function createRouterMaps(paths) {
-  return Object.keys(paths).reduce((maps, cur) => {
-    let fileName = /\.\.\/views\/(\w+)\.vue/.exec(cur)[1];
-    // let pathName = String(fileName.slice(0, -4)).toLowerCase();
-
-    maps.push({
-      path: `/${fileName}`,
-      name: fileName,
-      component: paths[cur],
-    });
-    return maps;
-  }, []);
-}
+const extendRouters = createRouterMaps(import.meta.glob("@/pages/**/*.vue"));
 
 // vue路由
 const routers = createRouter({
@@ -30,7 +14,8 @@ const routers = createRouter({
       name: "home",
       component: index,
     },
-    ...createRouterMaps(import.meta.glob("../views/**/*.vue")),
+
+    ...extendRouters,
 
     {
       path: "/404",
@@ -51,8 +36,7 @@ routers.beforeEach((to, from, next) => {
   next();
 });
 
-routers.afterEach((to, from, failure) => {
-  console.log(failure);
-});
+// 路由后置拦截
+// routers.afterEach((to, from, failure) => {});
 
 export default routers;

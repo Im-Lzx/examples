@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     index
+    <global-title title="这是一段标题头"></global-title>
 
     <button class="" @click="goList">点击进入list</button>
   </div>

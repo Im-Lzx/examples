@@ -1,4 +1,3 @@
-// Body组件
 <template>
   <div>
     这是全局的Body组件

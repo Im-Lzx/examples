@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import Router from "./router";
-import GlobalComps from "@/components/globals/index.js";
+import GlobalComps from "@/components/global/index.js";
 import GlobalDirectives from "@/directives/index.js";
 import "./assets/main.css";
 

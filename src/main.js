@@ -3,7 +3,7 @@ import App from "./App.vue";
 import Router from "./router";
 import GlobalComps from "@/components/global/index.js";
 import GlobalDirectives from "@/directives/index.js";
-import "./assets/main.css";
+import "./styles/main.scss";
 
 const app = createApp(App);
 

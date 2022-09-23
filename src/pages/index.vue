@@ -1,9 +1,9 @@
 <template>
-  <div class="mx-auto" v-watermark="'Lzx'">
+  <div class="app-container">
     <global-header></global-header>
-    <main class="container flex flex-row justify-center">
+    <main class="main-container">
       <global-nav></global-nav>
-      <div class="content"></div>
+      <div class="content" v-watermark="'Lzx'"></div>
     </main>
   </div>
 </template>
@@ -18,4 +18,12 @@
 // }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app-container {
+  @apply container mx-auto font-sans text-base text-gray-700;
+}
+.main-container {
+  margin-top: $header-h;
+  @apply container flex flex-row justify-center;
+}
+</style>

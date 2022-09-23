@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto font-serif" v-watermark="'Lzx'">
+  <div class="mx-auto" v-watermark="'Lzx'">
     <global-header></global-header>
     <main class="container flex flex-row justify-center">
       <global-nav></global-nav>
